@@ -1,0 +1,16 @@
+AnimationPlayer
+Node2D
+Node
+CanvasLayer
+ColorRect
+TextureRect
+CenterContainer
+AnimationTree
+RichTextLabel
+HBoxContainer
+VBoxContainer
+Button
+MarginContainer
+SubViewport
+SubViewportContainer
+Control

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bshp7kngqe36r"]
+
+[ext_resource type="Script" path="res://scenes/intro_screen/intro_screen.gd" id="1_vcy1h"]
+[ext_resource type="Texture2D" uid="uid://ctbubyd7jexb1" path="res://icon.svg" id="2_do67y"]
+
+[sub_resource type="Animation" id="Animation_s7hqo"]
+resource_name = "start"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("center_container/logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m66px"]
+_data = {
+"start": SubResource("Animation_s7hqo")
+}
+
+[node name="intro_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcy1h")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m66px")
+}
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="center_container" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="logo" type="TextureRect" parent="center_container"]
+layout_mode = 2
+texture = ExtResource("2_do67y")

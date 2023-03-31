@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bclj5v524j3bn"]
+
+[ext_resource type="Script" path="res://autoload/ui_manager/ui_manager.gd" id="1_fr581"]
+
+[node name="ui_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fr581")
+
+[node name="gui" type="CanvasLayer" parent="."]
