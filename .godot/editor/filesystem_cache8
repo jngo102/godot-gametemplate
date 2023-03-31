@@ -1,8 +1,15 @@
 2a60927148abd1d33b818b535e306557
+<<<<<<< Updated upstream
 ::res://::1680221113
 export_presets.cfg::TextFile::-1::1680049325::0::1::::<><>::
 icon.svg::CompressedTexture2D::6109711166573072520::1680023942::1680023945::1::::<><>::
 license.md::TextFile::-1::1668559713::0::1::::<><>::
+=======
+::res://::1680226294
+export_presets.cfg::TextFile::-1::1680226024::0::1::::<><>::
+icon.svg::CompressedTexture2D::6109711166573072520::1680023942::1680225929::1::::<><>::
+license.md::TextFile::-1::1680221508::0::1::::<><>::
+>>>>>>> Stashed changes
 read_me.md::TextFile::-1::1680047867::0::1::::<><>::
 ::res://autoload/::1680046241
 ::res://autoload/scene_manager/::1680049555
@@ -11,6 +18,7 @@ scene_manager.tscn::PackedScene::6930814310754628625::1680047943::0::1::::<><>::
 ::res://autoload/ui_manager/::1680047943
 ui_manager.gd::GDScript::-1::1680047931::0::1::::<>Control<>::
 ui_manager.tscn::PackedScene::2550107703616250263::1680047943::0::1::::<><>::res://autoload/ui_manager/ui_manager.gd
+<<<<<<< Updated upstream
 ::res://build/::1680048911
 ::res://build/linux/::1680049324
 ::res://build/macos/::1680049258
@@ -23,6 +31,30 @@ index.png::CompressedTexture2D::7953913489438760223::1680049281::1680049307::1::
 ::res://common/main/::1680047942
 main.gd::GDScript::-1::1680047087::0::1::::<>Control<>::
 main.tscn::PackedScene::5094201539673693316::1680047942::0::1::::<><>::res://common/main/main.gd<>uid://bshp7kngqe36r
+=======
+::res://build/::1680225565
+::res://build/linux/::1680226031
+::res://build/macos/::1680226031
+::res://build/macos/game_template.app/::1680226031
+::res://build/macos/game_template.app/Contents/::1680226032
+::res://build/macos/game_template.app/Contents/Frameworks/::1680226031
+::res://build/macos/game_template.app/Contents/MacOS/::1680226033
+::res://build/macos/game_template.app/Contents/Resources/::1680226032
+::res://build/macos/game_template.app/Contents/_CodeSignature/::1680226032
+::res://build/web/::1680226282
+index.apple-touch-icon.png::CompressedTexture2D::5976461698347065782::1680226033::1680226282::1::::<><>::
+index.icon.png::CompressedTexture2D::6295057274585627317::1680226033::1680226282::1::::<><>::
+index.png::CompressedTexture2D::987771083188626943::1680226033::1680226282::1::::<><>::
+::res://build/webgl/::1680225929
+index.apple-touch-icon.png::CompressedTexture2D::2565584521891650889::1680049281::1680225929::1::::<><>::
+index.icon.png::CompressedTexture2D::4400614055986558986::1680049281::1680225929::1::::<><>::
+index.png::CompressedTexture2D::7953913489438760223::1680049281::1680225929::1::::<><>::
+::res://build/windows/::1680226030
+::res://common/::1680046679
+::res://common/main/::1680226053
+main.gd::GDScript::-1::1680047087::0::1::::<>Control<>::
+main.tscn::PackedScene::5094201539673693316::1680226053::0::1::::<><>::res://common/main/main.gd<>uid://bshp7kngqe36r
+>>>>>>> Stashed changes
 ::res://common/shaders/::1680049814
 blur.gdshader::Shader::-1::1680049814::0::1::::<><>::
 outline.gdshader::Shader::-1::1680049814::0::1::::<><>::
