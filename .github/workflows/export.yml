@@ -11,7 +11,7 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-latest
     container:
-      seanmaxwell/godot-ci:latest
+      jonstonchan/godot:4.0.1-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-latest
     container:
-      seanmaxwell/godot-ci:latest
+      jonstonchan/godot:4.0.1-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -55,7 +55,7 @@ jobs:
     name: macOS Export
     runs-on: ubuntu-latest
     container:
-      seanmaxwell/godot-ci:latest
+      jonstonchan/godot:4.0.1-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -77,7 +77,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      seanmaxwell/godot-ci:latest
+      jonstonchan/godot:4.0.1-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
