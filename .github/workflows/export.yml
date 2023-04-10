@@ -7,135 +7,27 @@ on:
     branches: main
 
 jobs:
-  export-windows:
-    name: Windows Export
+  export_game:
     runs-on: ubuntu-latest
-    container:
-      jonstonchan/godot:4.0.1-all
+    permissions: write-all
+    name: Export game
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Create export folder
-        run: |
-          mkdir -v -p build/windows
-          godot -v --export "Windows Desktop" build/windows/${{ secrets.ITCHIO_GAME }}.exe
-      - name: Zip game files
-        run: |
-          cd build/windows
-          zip -r ${{ secrets.ITCHIO_GAME }}-windows.zip *
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ secrets.ITCHIO_GAME }}-windows
-          path: build/windows/${{ secrets.ITCHIO_GAME }}-windows.zip
 
-  export-linux:
-    name: Linux Export
-    runs-on: ubuntu-latest
-    container:
-      jonstonchan/godot:4.0.1-all
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Create export folder
-        run: |
-          mkdir -v -p build/linux
-          godot -v --export "Linux/X11" build/linux/${{ secrets.ITCHIO_GAME }}.x86_64
-      - name: Zip game files
-        run: |
-          cd build/linux
-          zip -r ${{ secrets.ITCHIO_GAME }}-linux.zip *
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Export
+        id: export
+        uses: firebelley/godot-export@v5
         with:
-          name: ${{ secrets.ITCHIO_GAME }}-linux
-          path: build/linux/${{ secrets.ITCHIO_GAME }}-linux.zip
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.0.2/Godot_v4.0.2-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0.2/Godot_v4.0.2-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: true
 
-  export-macos:
-    name: macOS Export
-    runs-on: ubuntu-latest
-    container:
-      jonstonchan/godot:4.0.1-all
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Create export folder
-        run: |
-          mkdir -v -p build/macos
-          godot -v --export "macOS" build/macos/${{ secrets.ITCHIO_GAME }}.app
-      - name: Zip game files
-        run: |
-          cd build/macos
-          zip -r ${{ secrets.ITCHIO_GAME }}-macos.zip *
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with: 
-          name: ${{ secrets.ITCHIO_GAME }}-macos
-          path: build/macos/${{ secrets.ITCHIO_GAME }}.zip
-        
-  export-web:
-    name: Web Export
-    runs-on: ubuntu-latest
-    container:
-      jonstonchan/godot:4.0.1-all
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Create export folder
-        run: |
-          mkdir -v -p build/web
-          godot -v --export "Web" build/web/index.html
-      - name: Zip game files
-        run: |
-          cd build/web
-          zip -r ${{ secrets.ITCHIO_GAME }}-web.zip *
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: web
-          path: build/web
-      
-  release-artifacts:
-    name: Release artifacts
-    needs: [export-windows, export-linux, export-macos]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - name: Upload Windows artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.release.upload_url }}
-          asset_path: build/windows/${{ secrets.ITCHIO_GAME }}-windows.zip
-          asset_name: ${{ secrets.ITCHIO_GAME }}-windows.zip
-          asset_content_type: application/zip
-      - name: Upload Linux artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.release.upload_url }}
-          asset_path: build/linux/${{ secrets.ITCHIO_GAME }}-linux.zip
-          asset_name: ${{ secrets.ITCHIO_GAME }}-linux.zip
-          asset_content_type: application/zip
-      - name: Upload macOS artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.release.upload_url }}
-          asset_path: build/macos/${{ secrets.ITCHIO_GAME }}-macos.zip
-          asset_name: ${{ secrets.ITCHIO_GAME }}-macos.zip
-          asset_content_type: application/zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
+          tag: ${{ github.ref_name }}
+          artifacts: ${{ steps.export.outputs.archive_directory }}/*

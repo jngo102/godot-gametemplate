@@ -10,11 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Download Windows artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          workflow: export.yml
-          workflow_conclusion: success
           name: ${{ secrets.ITCHIO_GAME }}-windows
           path: build/windows
       - name: Upload to Itch.io
@@ -31,11 +28,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Download Linux artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          workflow: export.yml
-          workflow_conclusion: success
           name: ${{ secrets.ITCHIO_GAME }}-linux
           path: build/linux
       - name: Upload to Itch.io
@@ -52,11 +46,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Download macOS artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          workflow: export.yml
-          workflow_conclusion: success
           name: ${{ secrets.ITCHIO_GAME }}-macos
           path: build/macos
       - name: Upload to Itch.io
@@ -75,7 +66,7 @@ jobs:
       - name: Download Web artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: export.yml
           workflow_conclusion: success
           name: ${{ secrets.ITCHIO_GAME }}-web
