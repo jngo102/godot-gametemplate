@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://buabm67inxpbl"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_qwa0t"]
+[ext_resource type="PackedScene" path="res://scenes/levels/intro_screen.tscn" id="2_agdps"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qwa0t")
+
+[node name="screen_container" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="screen" type="SubViewport" parent="screen_container"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(960, 540)
+render_target_update_mode = 4
+
+[node name="intro_screen" parent="screen_container/screen" instance=ExtResource("2_agdps")]

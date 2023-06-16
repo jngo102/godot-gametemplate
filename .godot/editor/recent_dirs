@@ -1,6 +1,7 @@
+res://scenes/levels
+res://scripts/levels
+res://scripts/actors
+res://scenes/actors
 G:/Games/4.0/GameTemplate/build/linux
 G:/Games/4.0/GameTemplate/build/macos
 G:/Games/4.0/GameTemplate/build/windows
-res://common/main
-res://autoload/scene_manager
-res://autoload/ui_manager

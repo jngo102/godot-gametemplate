@@ -1,4 +1,7 @@
+CollisionShape2D
+Sprite2D
 AnimationPlayer
+CharacterBody2D
 Node2D
 Node
 CanvasLayer

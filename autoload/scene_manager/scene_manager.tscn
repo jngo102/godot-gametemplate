@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c50lq77mud5yr"]
-
-[ext_resource type="Script" path="res://autoload/scene_manager/scene_manager.gd" id="1_lnaks"]
-
-[node name="scene_manager" type="Node2D"]
-script = ExtResource("1_lnaks")

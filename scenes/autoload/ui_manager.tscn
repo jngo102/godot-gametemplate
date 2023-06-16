@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bclj5v524j3bn"]
+[gd_scene load_steps=2 format=3 uid="uid://cye6vn0u142xw"]
 
-[ext_resource type="Script" path="res://autoload/ui_manager/ui_manager.gd" id="1_fr581"]
+[ext_resource type="Script" path="res://scripts/autoload/ui_manager.gd" id="1_fr581"]
 
 [node name="ui_manager" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

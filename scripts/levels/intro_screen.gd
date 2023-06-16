@@ -5,4 +5,4 @@ extends Control
 func _ready() -> void:
 	animator.play("start")
 	await animator.animation_finished
-	SceneManager.change_scene("main_menu")
+	SceneManager.change_scene(SceneManager.Scene.MainMenu)

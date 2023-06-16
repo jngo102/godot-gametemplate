@@ -6,33 +6,32 @@ extends BaseUI
 @onready var menu_buttons: VBoxContainer = margin_container.get_node("menu_buttons")
 @onready var quit_warning: VBoxContainer = margin_container.get_node("quit_warning")
 
-var can_close: bool
-
 func _ready() -> void:
-	background_blur.texture = get_viewport().get_texture()
+	background_blur.texture = get_window().get_texture()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if is_open:
-			close()
+			UIManager.close_ui(UIManager.UI.PauseMenu)
 		else:
-			open()
+			UIManager.open_ui(UIManager.UI.PauseMenu)
 			
 func open() -> void:
 	super.open()
-	animator.play("open")
+	pause()
+	animator.play("Open")
+	await animator.animation_finished
+	
 	
 func close() -> void:
-	animator.play("close")
+	print("CLOSE PAUSE")
+	animator.play("Close")
+	await animator.animation_finished
+	pause(false)
+	super.close()
 	
 func pause(do_pause: bool = true) -> void:
 	get_tree().set_pause(do_pause)
-
-func _on_animator_animation_finished(anim_name: String) -> void:
-	if anim_name == "open":
-		can_close = true
-	elif anim_name == "close":
-		super.close()
 
 func _on_resume_button_pressed() -> void:
 	close()
@@ -46,7 +45,7 @@ func _on_quit_button_pressed() -> void:
 
 func _on_quit_confirm_pressed() -> void:
 	close()
-	SceneManager.change_scene("main_menu")
+	SceneManager.change_scene(SceneManager.Scene.MainMenu)
 
 func _on_quit_cancel_pressed() -> void:
 	quit_warning.hide()

@@ -6,9 +6,6 @@ signal closed(ui)
 
 var is_open: bool
 
-func _ready() -> void:
-	connect("visibility_changed", _on_visibility_changed)
-
 func open() -> void:
 	show()
 	opened.emit(self)
@@ -18,9 +15,3 @@ func close() -> void:
 	hide()
 	closed.emit(self)
 	is_open = false
-
-func _on_visibility_changed() -> void:
-	if visible:
-		pass
-	else:
-		pass

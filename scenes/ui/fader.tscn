@@ -1,22 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://fiwg4i7c48dh"]
+[gd_scene load_steps=5 format=3 uid="uid://c1l1a600l5vh"]
 
-[ext_resource type="Script" path="res://gui/fader/fader.gd" id="1_k17rr"]
-
-[sub_resource type="Animation" id="Animation_yuw0q"]
-resource_name = "show"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fader_rect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
+[ext_resource type="Script" path="res://scripts/ui/fader.gd" id="1_mk34v"]
 
 [sub_resource type="Animation" id="Animation_uhtyq"]
 resource_name = "hide"
@@ -34,6 +18,22 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_yuw0q"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fader_rect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hh2pj"]
 _data = {
 "hide": SubResource("Animation_uhtyq"),
@@ -47,7 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k17rr")
+script = ExtResource("1_mk34v")
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
