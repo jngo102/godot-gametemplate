@@ -1,8 +1,0 @@
-res://autoload/scene_manager/scene_manager.tscn::ab421ccfaf7b8b8b485bdb3b39822c16::1680047943::res://.godot/exported/133200997/export-e826e0147ef8fa808558500ba6267943-scene_manager.scn
-res://autoload/ui_manager/ui_manager.tscn::bb8054d1776959e06f89764f20dfda76::1680047943::res://.godot/exported/133200997/export-7ddb2f31ac7f567bd1eeadc4f3b20fb8-ui_manager.scn
-res://common/main/main.tscn::6397027ded45ad8d8bc792ba9ac7ae3e::1680047942::res://.godot/exported/133200997/export-be38ce8e8119a29546377ef321fb5b05-main.scn
-res://gui/fader/fader.tscn::4df74646c321ec902b035f6a456f813a::1680047942::res://.godot/exported/133200997/export-44598c79a3e447ee8ebde156366fd9b0-fader.scn
-res://gui/pause_menu/pause_menu.tscn::ba7f2815f43ab1e7cdc153768c37998e::1680047943::res://.godot/exported/133200997/export-55f447ec2e7b2ee0ae5d47d7bc840026-pause_menu.scn
-res://gui/menu_button.tscn::dd55d16149e63c689fb8d65e6bd5a5a6::1680025818::res://.godot/exported/133200997/export-3f70c87a425196c3103e353039ad1a60-menu_button.scn
-res://scenes/intro_screen/intro_screen.tscn::2a4e413f81c5171bcde4d7257ef591b2::1680047943::res://.godot/exported/133200997/export-efc50245c1f609c2a3000d9121f2224c-intro_screen.scn
-res://scenes/main_menu/main_menu.tscn::78a5adc0f0cef6a64ee59835f00c08f1::1680047943::res://.godot/exported/133200997/export-c06f25764a06ba9f0130370d778d1eac-main_menu.scn
