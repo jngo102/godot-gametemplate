@@ -19,13 +19,12 @@ func _input(event: InputEvent) -> void:
 func open() -> void:
 	super.open()
 	pause()
-	animator.play("Open")
+	animator.play("open")
 	await animator.animation_finished
 	
 	
 func close() -> void:
-	print("CLOSE PAUSE")
-	animator.play("Close")
+	animator.play("close")
 	await animator.animation_finished
 	pause(false)
 	super.close()

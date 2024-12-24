@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="GMTK Game Jam 2023"
+config/name="Godot Game Template"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.0", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -34,7 +34,11 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Game Template"
 
+[editor]
+
+naming/node_name_casing=2
+naming/script_name_casing=2
+
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

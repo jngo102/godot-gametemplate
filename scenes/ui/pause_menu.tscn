@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://xmhpn38awq6d" path="res://scenes/ui/menu_button.tscn" id="3_eoqxw"]
 
 [sub_resource type="Animation" id="Animation_ggqxh"]
-resource_name = "Close"
+resource_name = "close"
 length = 0.25
 step = 0.01
 tracks/0/type = "value"
@@ -34,7 +34,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_aoohy"]
-resource_name = "Open"
+resource_name = "open"
 length = 0.25
 step = 0.01
 tracks/0/type = "value"
@@ -64,8 +64,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ev1d"]
 _data = {
-"Close": SubResource("Animation_ggqxh"),
-"Open": SubResource("Animation_aoohy")
+"close": SubResource("Animation_ggqxh"),
+"open": SubResource("Animation_aoohy")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wdcyn"]
